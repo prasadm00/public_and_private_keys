@@ -1,5 +1,10 @@
 ## Public and Private key
 
+
+1. Generate public key and private key using RSA
+2. Encrypt the data using public key
+3. Decrypt the data using private key
+
 RSA works by generating a public and a private key. The public and private keys are generated together and form a key pair.
 
 
