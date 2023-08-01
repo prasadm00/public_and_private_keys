@@ -19,3 +19,9 @@ The public key can be used to encrypt any arbitrary piece of data, but cannot de
 The private key can be used to decrypt any piece of data that was encrypted by it’s corresponding public key.
 
 ![alt text](https://www.sohamkamani.com/golang/rsa-encryption/decryption.svg)
+
+
+
+### How to run the code
+
+`node index.js`
