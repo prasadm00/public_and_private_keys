@@ -1,5 +1,4 @@
 
-const fs = require("fs")
 const crypto = require("crypto")
 const { generateKeyPair } = require('crypto');
 
@@ -46,26 +45,9 @@ const decryptText = async (privateKey, encryptedData) => {
 
 const decryptData = async (privateKey, encryptedData) => {
     console.log('In decrypt payload', encryptedData)
-    // const buf1 = Buffer.allocUnsafe(encryptedData.payload);
+
 
     try {
-
-        // const decryptedData = crypto.privateDecrypt(
-        //     {
-        //         key: privateKey,
-        //         // In order to decrypt the data, we need to specify the
-        //         // same hashing function and padding scheme that we used to
-        //         // encrypt the data in the previous step
-        //         padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
-        //         oaepHash: "sha256",
-        //     },
-        //     encryptedData
-        // );
-        // console.log("🚀 ~ file: helper.js:72 ~ decryptData ~ decryptedData:", decryptedData)
-
-
-
-
         const decryptedChunks = []
 
         for (const encryptedChunk of encryptedData) {
@@ -118,18 +100,6 @@ const decryptData1 = async (privateKey, encryptedData) => {
 const generateKeys = async () => {
     try {
         const keys = {}
-        // The `generateKeyPairSync` method accepts two arguments:
-        // 1. The type ok keys we want, which in this case is "rsa"
-        // 2. An object with the properties of the key
-        // const { publicKey, privateKey } = await crypto.generateKeyPairSync("rsa", {
-        //     // The standard secure default length for RSA keys is 2048 bits
-        //     modulusLength: 2048,
-        // })
-        // console.log("🚀 ~ file: helper.js:28 ~ generateKeys ~ publicKey:", publicKey)
-        // keys.publicKey = publicKey
-        // keys.privateKey = privateKey
-        // console.log("keys", keys);
-
         return new Promise((resolve, reject) => {
             generateKeyPair(
                 'rsa',
@@ -171,6 +141,4 @@ module.exports = {
     generateKeys,
     encryptText,
     decryptText,
-    // decryptData,
-    // decryptData1
 }
